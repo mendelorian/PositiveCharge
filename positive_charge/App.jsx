@@ -123,8 +123,9 @@ class App extends React.Component {
               </li>
             </ul>
           </div>
+          {/* { isLoggedIn ? <h3>Welcome back, {userName}!</h3> : null } */}
           <Routes>
-            <Route path="/" element={<FindChargingStations />}/>
+            <Route path="/" element={<FindChargingStations isLoggedIn={isLoggedIn} userName={userName}/>}/>
             <Route path="/login" element={<Login logIn={this.logIn}/>} />
             <Route path="signup" element={<Signup />} />
             <Route path="/logout" element={this.state.isLoggedIn ? <Navigate to="/" replace={true} /> : null} />
