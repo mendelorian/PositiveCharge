@@ -13,6 +13,8 @@ import './src/styles.scss';
 import axios from 'axios';
 import ResponsiveAppBar from './src/components/navbar.jsx'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+
 
 const theme = createTheme({
   palette: {
@@ -109,7 +111,7 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <ResponsiveAppBar isLoggedIn={isLoggedIn} logOut={this.logOut}/>
-          { isLoggedIn ? <h3>Welcome back, {userName} !</h3> : null }
+          { isLoggedIn ? <Typography component="h5" variant="h6" sx={{ mt: 2}}>Welcome back, {userName} !</Typography> : null }
           <div className="links">
             <ul>
               <li>

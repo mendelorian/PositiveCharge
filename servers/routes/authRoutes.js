@@ -5,10 +5,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { pool } = require('../../database/models');
 
-authRouter.use((req, res, next) => {
-  console.log('Time: ', Date());
-  next()
-})
+// authRouter.use((req, res, next) => {
+//   console.log('Time: ', Date());
+//   next()
+// })
 
 function verifyToken(req, res, next) {
   var token = req.cookies.token;
