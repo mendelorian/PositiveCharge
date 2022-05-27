@@ -30,7 +30,7 @@ function Sponsor() {
     var poi_id, user_id;
     var yelpId = data.props.id;
     // check if POI exists in DB
-    axios.get('/get-poi-user', {
+    axios.get('/sponsor/get-poi-user', {
       params: {
         id: data.props.id,
         name: data.props.name
@@ -60,7 +60,7 @@ function Sponsor() {
     })
     .then((ids) => {
       console.log('poi_id:', ids.poi, 'user_id', ids.user);
-      axios.post('/sponsor', {
+      axios.post('/sponsor/sponsor', {
         startDate: startDate,
         months: months,
         user: ids.user,
@@ -78,7 +78,7 @@ function Sponsor() {
     })
     // immediately check if there are any active sponsors
     .then(() => {
-      axios.get('/activate')
+      axios.get('/sponsor/activate')
       .then((res) => {
         console.log('Activated POIs: ', res);
       })

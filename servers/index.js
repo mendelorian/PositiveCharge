@@ -33,7 +33,7 @@ module.exports = (database) => {
   app.post('/addPOI', addPOIRouter);
   app.use('/details', detailsRouter);
   app.use('/map', mapRouter);
-  app.use('/', sponsorRouter);
+  app.use('/sponsor', sponsorRouter);
   app.use('/getPOI', seePOIRouter);
 
 
